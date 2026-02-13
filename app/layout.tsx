@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://yoursite.com",
+    url: "https://interior-designer-portfolio-one.vercel.app",
     siteName: "Interior Designer Portfolio",
     title: "Interior Designer — Residential Interior Design Portfolio",
     description: "Premium residential interior design services in Canada. Specializing in modern, minimal spaces.",

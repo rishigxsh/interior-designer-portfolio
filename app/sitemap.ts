@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://yoursite.com"; // Change to your actual domain
+  const baseUrl = "https://interior-designer-portfolio-one.vercel.app";
 
   // Static routes
   const staticRoutes = [
