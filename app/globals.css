@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: theme('colors.border');
+  }
+  
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.foreground');
+    font-family: var(--font-inter), system-ui, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Remove default button styles */
+  button {
+    font-family: inherit;
+  }
+
+  /* Form input placeholders */
+  ::placeholder {
+    color: rgba(107, 107, 107, 0.5);
+  }
+
+  /* Selection colors */
+  ::selection {
+    background-color: rgba(201, 160, 92, 0.2);
+    color: #1A1A1A;
+  }
+}
+
+@layer utilities {
+  /* Custom container utility - kept for backwards compatibility */
+  .container-custom {
+    @apply mx-auto px-6 md:px-8 lg:px-12 max-w-container;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
