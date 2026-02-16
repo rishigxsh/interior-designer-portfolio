@@ -46,6 +46,10 @@ export const projects: Project[] = [
         src: "/portfolio/tech-01-02.png",
         alt: "Technical drawings including floor plans and elevations for modern living room design",
       },
+      {
+        src: "/portfolio/tech-03-04.png",
+        alt: "Detailed section views and construction drawings for living room layout",
+      },
     ],
   },
   {
@@ -63,7 +67,7 @@ export const projects: Project[] = [
     ],
     technicalDrawings: [
       {
-        src: "/portfolio/tech-03-04.png",
+        src: "/portfolio/tech-05.png",
         alt: "Bedroom technical drawings with detailed plans and section views",
       },
     ],
@@ -87,8 +91,12 @@ export const projects: Project[] = [
     ],
     technicalDrawings: [
       {
-        src: "/portfolio/tech-05.png",
+        src: "/portfolio/tech-06.png",
         alt: "Wardrobe construction drawings with detailed joinery and material specifications",
+      },
+      {
+        src: "/portfolio/tech-07.png",
+        alt: "Wardrobe elevation drawings showing custom built-in details and dimensions",
       },
     ],
   },
@@ -107,7 +115,7 @@ export const projects: Project[] = [
     ],
     technicalDrawings: [
       {
-        src: "/portfolio/tech-06.png",
+        src: "/portfolio/tech-08.png",
         alt: "Kitchen technical plans with detailed cabinetry layouts and appliance specifications",
       },
     ],
@@ -127,7 +135,7 @@ export const projects: Project[] = [
     ],
     technicalDrawings: [
       {
-        src: "/portfolio/tech-07.png",
+        src: "/portfolio/tech-09.png",
         alt: "Dining room technical drawings showing furniture placement and lighting plans",
       },
     ],
@@ -155,24 +163,16 @@ export const projects: Project[] = [
     ],
     technicalDrawings: [
       {
-        src: "/portfolio/tech-08.png",
+        src: "/portfolio/tech-10.png",
         alt: "Kids room floor plan with furniture layout and play area zoning",
       },
       {
-        src: "/portfolio/tech-09.png",
+        src: "/portfolio/tech-11.png",
         alt: "Storage elevation drawings showing custom built-in solutions",
       },
       {
-        src: "/portfolio/tech-10.png",
-        alt: "Detailed section views of custom furniture and safety features",
-      },
-      {
-        src: "/portfolio/tech-11.png",
-        alt: "Lighting and electrical plan for kids bedroom",
-      },
-      {
         src: "/portfolio/tech-12.png",
-        alt: "Material specifications and finish schedule for kids room",
+        alt: "Detailed section views and material specifications for kids room",
       },
     ],
   },
