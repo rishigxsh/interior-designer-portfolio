@@ -9,6 +9,10 @@ export interface Project {
     src: string;
     alt: string;
   }[];
+  technicalDrawings: {
+    src: string;
+    alt: string;
+  }[];
 }
 
 export const projects: Project[] = [
@@ -37,6 +41,12 @@ export const projects: Project[] = [
         alt: "Living area highlighting elegant material palette and sophisticated design details",
       },
     ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-01-02.png",
+        alt: "Technical drawings including floor plans and elevations for modern living room design",
+      },
+    ],
   },
   {
     slug: "serene-bedroom-sanctuary",
@@ -49,6 +59,12 @@ export const projects: Project[] = [
       {
         src: "/portfolio/portfolio-05.jpg",
         alt: "Tranquil bedroom with organic textures, layered linens, and ambient lighting",
+      },
+    ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-03-04.png",
+        alt: "Bedroom technical drawings with detailed plans and section views",
       },
     ],
   },
@@ -69,6 +85,12 @@ export const projects: Project[] = [
         alt: "Wardrobe detail showcasing elegant organization and premium finishes",
       },
     ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-05.png",
+        alt: "Wardrobe construction drawings with detailed joinery and material specifications",
+      },
+    ],
   },
   {
     slug: "contemporary-kitchen-haven",
@@ -83,6 +105,12 @@ export const projects: Project[] = [
         alt: "Contemporary kitchen with minimalist cabinetry, premium appliances, and natural stone countertops",
       },
     ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-06.png",
+        alt: "Kitchen technical plans with detailed cabinetry layouts and appliance specifications",
+      },
+    ],
   },
   {
     slug: "elegant-dining-experience",
@@ -95,6 +123,12 @@ export const projects: Project[] = [
       {
         src: "/portfolio/portfolio-09.jpg",
         alt: "Elegant dining room with statement lighting, refined table setting, and luxury seating",
+      },
+    ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-07.png",
+        alt: "Dining room technical drawings showing furniture placement and lighting plans",
       },
     ],
   },
@@ -117,6 +151,28 @@ export const projects: Project[] = [
       {
         src: "/portfolio/portfolio-12.jpg",
         alt: "Kids space detail highlighting creative design and functional organization",
+      },
+    ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-08.png",
+        alt: "Kids room floor plan with furniture layout and play area zoning",
+      },
+      {
+        src: "/portfolio/tech-09.png",
+        alt: "Storage elevation drawings showing custom built-in solutions",
+      },
+      {
+        src: "/portfolio/tech-10.png",
+        alt: "Detailed section views of custom furniture and safety features",
+      },
+      {
+        src: "/portfolio/tech-11.png",
+        alt: "Lighting and electrical plan for kids bedroom",
+      },
+      {
+        src: "/portfolio/tech-12.png",
+        alt: "Material specifications and finish schedule for kids room",
       },
     ],
   },

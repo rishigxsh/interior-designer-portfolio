@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,13 +59,18 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Combine all images (technical drawings + visuals) for lightbox
+  const allImages = useMemo(() => {
+    return [...project.technicalDrawings, ...project.images];
+  }, [project]);
+
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
     setLightboxOpen(true);
   };
 
   const handleNext = () => {
-    if (currentImageIndex < project.images.length - 1) {
+    if (currentImageIndex < allImages.length - 1) {
       setCurrentImageIndex(currentImageIndex + 1);
     }
   };
@@ -91,7 +96,7 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
         className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] mb-16 lg:mb-20 cursor-pointer overflow-hidden"
-        onClick={() => openLightbox(0)}
+        onClick={() => openLightbox(project.technicalDrawings.length)}
       >
         <Image
           src={project.images[0].src}
@@ -158,8 +163,72 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
         </motion.div>
       </Container>
 
-      {/* Gallery Section */}
-      {project.images.length > 1 && (
+      {/* Technical Drawings Section */}
+      {project.technicalDrawings.length > 0 && (
+        <Container className="mb-20 lg:mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-tight mb-3">
+              Technical Drawings
+            </h2>
+            <p className="text-muted font-light text-sm">
+              Plans and elevations for execution.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {project.technicalDrawings.map((drawing, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative aspect-[4/3] bg-background border border-border/60 overflow-hidden cursor-pointer group"
+                onClick={() => openLightbox(index)}
+              >
+                <Image
+                  src={drawing.src}
+                  alt={drawing.alt}
+                  fill
+                  className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 flex items-center justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileHover={{ opacity: 1, scale: 1 }}
+                    className="w-12 h-12 rounded-full bg-background/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity border border-border/60"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"
+                      />
+                    </svg>
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      )}
+
+      {/* Visuals Section */}
+      {project.images.length > 0 && (
         <Container className="mb-20 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -169,12 +238,12 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
             className="mb-12"
           >
             <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-tight">
-              Project Gallery
+              Visuals
             </h2>
           </motion.div>
 
           <div className="space-y-8 lg:space-y-12">
-            {project.images.slice(1).map((image, index) => (
+            {project.images.map((image, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -182,7 +251,7 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative aspect-[16/10] bg-foreground/5 overflow-hidden cursor-pointer group"
-                onClick={() => openLightbox(index + 1)}
+                onClick={() => openLightbox(project.technicalDrawings.length + index)}
               >
                 <Image
                   src={image.src}
@@ -190,6 +259,7 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"
+                  priority={index === 0}
                 />
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors duration-300 flex items-center justify-center">
                   <motion.div
@@ -301,14 +371,14 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
         </motion.div>
       </Container>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal - All Images Combined */}
       <LightboxModal
         isOpen={lightboxOpen}
         onClose={() => setLightboxOpen(false)}
-        imageSrc={project.images[currentImageIndex]?.src || ""}
-        imageAlt={project.images[currentImageIndex]?.alt || ""}
+        imageSrc={allImages[currentImageIndex]?.src || ""}
+        imageAlt={allImages[currentImageIndex]?.alt || ""}
         currentIndex={currentImageIndex}
-        totalImages={project.images.length}
+        totalImages={allImages.length}
         onNext={handleNext}
         onPrev={handlePrev}
       />
