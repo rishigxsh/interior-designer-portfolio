@@ -32,23 +32,11 @@ export const projects: Project[] = [
         src: "/portfolio/portfolio-02.jpg",
         alt: "Living room detail showcasing luxurious textures and carefully curated decor elements",
       },
-      {
-        src: "/portfolio/portfolio-03.jpg",
-        alt: "Contemporary living space with refined furniture arrangement and ambient lighting",
-      },
-      {
-        src: "/portfolio/portfolio-04.jpg",
-        alt: "Living area highlighting elegant material palette and sophisticated design details",
-      },
     ],
     technicalDrawings: [
       {
         src: "/portfolio/tech-01-02.png",
         alt: "Technical drawings including floor plans and elevations for modern living room design",
-      },
-      {
-        src: "/portfolio/tech-03-04.png",
-        alt: "Detailed section views and construction drawings for living room layout",
       },
     ],
   },
@@ -149,6 +137,30 @@ export const projects: Project[] = [
       {
         src: "/portfolio/tech-12.png",
         alt: "Detailed section views and material specifications for kids room",
+      },
+    ],
+  },
+  {
+    slug: "rustic-living",
+    title: "Rustic Living",
+    category: "Living Room",
+    location: "Canada",
+    role: "Residential Interior Designer",
+    description: "A warm and inviting living space featuring rustic elements, natural materials, and refined furniture arrangements that create a cozy yet sophisticated atmosphere.",
+    images: [
+      {
+        src: "/portfolio/portfolio-03.jpg",
+        alt: "Rustic living space with refined furniture arrangement and ambient lighting",
+      },
+      {
+        src: "/portfolio/portfolio-04.jpg",
+        alt: "Rustic living area highlighting natural material palette and warm design details",
+      },
+    ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-03-04.png",
+        alt: "Detailed section views and construction drawings for rustic living room layout",
       },
     ],
   },
