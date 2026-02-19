@@ -97,7 +97,7 @@ export const projects: Project[] = [
     description: "A refined culinary space balancing clean lines with warmth and everyday functionality.",
     images: [
       {
-        src: "/portfolio/portfolio-08.jpg",
+        src: "/portfolio/portfolio-08.png",
         alt: "Contemporary kitchen with minimalist cabinetry, premium appliances, and natural stone countertops",
       },
     ],
