@@ -89,16 +89,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "contemporary-kitchen-haven",
-    title: "Contemporary Kitchen Haven",
+    slug: "contemporary-kitchen-dining",
+    title: "Contemporary Kitchen & Dining",
     category: "Kitchen",
     location: "Canada",
     role: "Residential Interior Designer",
-    description: "A refined culinary space balancing clean lines with warmth and everyday functionality.",
+    description: "A refined culinary and dining space balancing clean lines with warmth, everyday functionality, and elegant gathering moments.",
     images: [
       {
         src: "/portfolio/portfolio-08.png",
         alt: "Contemporary kitchen with minimalist cabinetry, premium appliances, and natural stone countertops",
+      },
+      {
+        src: "/portfolio/portfolio-09.jpg",
+        alt: "Elegant dining room with statement lighting, refined table setting, and luxury seating",
       },
     ],
     technicalDrawings: [
@@ -106,22 +110,6 @@ export const projects: Project[] = [
         src: "/portfolio/tech-08.png",
         alt: "Kitchen technical plans with detailed cabinetry layouts and appliance specifications",
       },
-    ],
-  },
-  {
-    slug: "elegant-dining-experience",
-    title: "Elegant Dining Experience",
-    category: "Dining",
-    location: "Canada",
-    role: "Residential Interior Designer",
-    description: "A gathering space that balances formality with comfort through refined materials and lighting.",
-    images: [
-      {
-        src: "/portfolio/portfolio-09.jpg",
-        alt: "Elegant dining room with statement lighting, refined table setting, and luxury seating",
-      },
-    ],
-    technicalDrawings: [
       {
         src: "/portfolio/tech-09.png",
         alt: "Dining room technical drawings showing furniture placement and lighting plans",
