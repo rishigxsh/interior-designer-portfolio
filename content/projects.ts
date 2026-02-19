@@ -25,11 +25,11 @@ export const projects: Project[] = [
     description: "A sophisticated living space combining neutral tones with refined textures for timeless comfort and contemporary style.",
     images: [
       {
-        src: "/portfolio/portfolio-01.jpg",
+        src: "/portfolio/portfolio-01.png",
         alt: "Modern living room featuring neutral palette, plush seating, and architectural lighting",
       },
       {
-        src: "/portfolio/portfolio-02.jpg",
+        src: "/portfolio/portfolio-02.png",
         alt: "Living room detail showcasing luxurious textures and carefully curated decor elements",
       },
     ],
