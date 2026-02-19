@@ -164,4 +164,32 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    slug: "powder-room",
+    title: "Powder Room",
+    category: "Powder Room",
+    location: "Canada",
+    role: "Residential Interior Designer",
+    description: "An intimate powder room design combining refined finishes with functional elegance for a sophisticated guest experience.",
+    images: [
+      {
+        src: "/portfolio/portfolio-13.jpg",
+        alt: "Elegant powder room featuring refined fixtures and sophisticated material palette",
+      },
+      {
+        src: "/portfolio/portfolio-14.jpg",
+        alt: "Powder room detail showcasing luxury finishes and thoughtful design elements",
+      },
+    ],
+    technicalDrawings: [
+      {
+        src: "/portfolio/tech-13.png",
+        alt: "Powder room technical drawings with fixture placement and plumbing specifications",
+      },
+      {
+        src: "/portfolio/tech-14.png",
+        alt: "Detailed elevation drawings showing vanity design and material specifications",
+      },
+    ],
+  },
 ];
