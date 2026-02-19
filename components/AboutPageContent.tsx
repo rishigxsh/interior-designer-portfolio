@@ -52,11 +52,27 @@ export default function AboutPageContent() {
         <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight mb-8">
           About
         </h1>
+      </motion.div>
+
+      {/* Background Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="mb-8 lg:mb-10 pb-8 lg:pb-10 border-b border-border/60"
+      >
+        <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-tight mb-6">
+          Background
+        </h2>
         
-        {/* Bio */}
-        <p className="text-lg md:text-xl text-muted font-light leading-relaxed">
-          Residential interior designer specializing in creating thoughtful, livable spaces that balance aesthetics with functionality. Based in Canada with a focus on modern, minimal design solutions that enhance everyday living.
-        </p>
+        <div className="space-y-4 text-base md:text-lg text-muted font-light leading-relaxed">
+          <p>
+            I&apos;m a Design consultant with over three years of experience shaping residential spaces from concept to on-site execution. My work is grounded in thoughtful space planning, clear technical documentation, and designs that translate seamlessly from drawings to real spaces.
+          </p>
+          <p>
+            Having contributed to more than 60 residential projects, I focus on creating functional, well-resolved interiors through strong AutoCAD detailing, coordination with project teams, and an execution-first approach. Currently based in Toronto, I&apos;m building my career within the Canadian design industry and looking to collaborate with studios that value clarity, practicality, and well-designed spaces.
+          </p>
+        </div>
       </motion.div>
 
       {/* Capabilities Section */}
