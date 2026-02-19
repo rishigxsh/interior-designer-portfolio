@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Work",
   description: "Portfolio of residential interior design projects including living rooms, bedrooms, kitchens, and custom spaces across Canada.",
   openGraph: {
-    title: "Work — Interior Designer",
+    title: "Work — Design Consultant",
     description: "Portfolio of residential interior design projects across Canada.",
   },
 };

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch for interior design projects in Canada. Available for hire and open to opportunities.",
   openGraph: {
-    title: "Contact — Interior Designer",
+    title: "Contact — Design Consultant",
     description: "Available for hire in Canada. Open to residential interior design opportunities.",
   },
 };

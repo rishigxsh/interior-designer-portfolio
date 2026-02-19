@@ -9,6 +9,7 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
+  { name: "Testimonials", href: "/testimonials" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -24,7 +25,7 @@ export default function Header() {
             href="/"
             className="font-serif text-xl lg:text-2xl font-medium tracking-tight hover:text-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-sm"
           >
-            Interior Designer
+            Design Consultant
           </Link>
 
           {/* Navigation */}

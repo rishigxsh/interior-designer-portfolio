@@ -20,31 +20,31 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Interior Designer — Residential Interior Design Portfolio",
-    template: "%s — Interior Designer",
+    default: "Design Consultant — Residential Interior Design Portfolio",
+    template: "%s — Design Consultant",
   },
   description: "Premium residential interior design services in Canada. Specializing in modern, minimal spaces that balance aesthetics with functionality.",
   keywords: ["interior design", "residential design", "Canada interior designer", "modern interiors", "luxury design"],
-  authors: [{ name: "Interior Designer" }],
+  authors: [{ name: "Design Consultant" }],
   openGraph: {
     type: "website",
     locale: "en_CA",
     url: "https://interior-designer-portfolio-one.vercel.app",
-    siteName: "Interior Designer Portfolio",
-    title: "Interior Designer — Residential Interior Design Portfolio",
+    siteName: "Design Consultant Portfolio",
+    title: "Design Consultant — Residential Interior Design Portfolio",
     description: "Premium residential interior design services in Canada. Specializing in modern, minimal spaces.",
     images: [
       {
         url: "/portfolio/portfolio-01.jpg",
         width: 1200,
         height: 630,
-        alt: "Interior Designer Portfolio",
+        alt: "Design Consultant Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Interior Designer — Residential Interior Design Portfolio",
+    title: "Design Consultant — Residential Interior Design Portfolio",
     description: "Premium residential interior design services in Canada.",
     images: ["/portfolio/portfolio-01.jpg"],
   },

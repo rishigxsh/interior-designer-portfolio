@@ -58,28 +58,12 @@ export const projects: Project[] = [
     category: "Bedroom",
     location: "Canada",
     role: "Residential Interior Designer",
-    description: "A calming retreat designed for rest, featuring soft layers and warm natural materials.",
+    description: "A calming retreat designed for rest, featuring soft layers, warm natural materials, and custom storage solutions with elegant finishes.",
     images: [
       {
         src: "/portfolio/portfolio-05.jpg",
         alt: "Tranquil bedroom with organic textures, layered linens, and ambient lighting",
       },
-    ],
-    technicalDrawings: [
-      {
-        src: "/portfolio/tech-05.png",
-        alt: "Bedroom technical drawings with detailed plans and section views",
-      },
-    ],
-  },
-  {
-    slug: "bespoke-wardrobe-design",
-    title: "Bespoke Wardrobe Design",
-    category: "Wardrobe",
-    location: "Canada",
-    role: "Residential Interior Designer",
-    description: "Custom storage solution with elegant finishes and meticulous attention to functional luxury.",
-    images: [
       {
         src: "/portfolio/portfolio-06.jpg",
         alt: "Custom walk-in wardrobe with sophisticated shelving and luxury materials",
@@ -90,6 +74,10 @@ export const projects: Project[] = [
       },
     ],
     technicalDrawings: [
+      {
+        src: "/portfolio/tech-05.png",
+        alt: "Bedroom technical drawings with detailed plans and section views",
+      },
       {
         src: "/portfolio/tech-06.png",
         alt: "Wardrobe construction drawings with detailed joinery and material specifications",

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "About",
   description: "Residential interior designer specializing in thoughtful, livable spaces. Based in Canada, available for hire.",
   openGraph: {
-    title: "About — Interior Designer",
+    title: "About — Design Consultant",
     description: "Residential interior designer based in Canada, specializing in modern, minimal design solutions.",
   },
 };

@@ -27,10 +27,10 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Copyright */}
-            <div className="text-sm font-light text-muted/70">
-              © {currentYear} Interior Designer. All rights reserved.
-            </div>
+                  {/* Copyright */}
+                  <div className="text-sm font-light text-muted/70">
+                    © {currentYear} Design Consultant. All rights reserved.
+                  </div>
           </div>
         </div>
       </Container>
