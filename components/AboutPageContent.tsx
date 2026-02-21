@@ -76,7 +76,7 @@ export default function AboutPageContent() {
           {/* LinkedIn Link */}
           <div className="pt-4">
             <a
-              href="https://www.linkedin.com/in/mrudula-dhondalay/"
+              href="https://www.linkedin.com/in/mrudula-dhondalay-3415a71b8/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 rounded-sm"
