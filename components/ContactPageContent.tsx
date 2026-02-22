@@ -59,6 +59,8 @@ export default function ContactPageContent() {
     email: false,
     message: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const copyEmail = async () => {
     try {
@@ -74,7 +76,7 @@ export default function ContactPageContent() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validate
@@ -91,18 +93,38 @@ export default function ContactPageContent() {
       return;
     }
 
-    // Create mailto link
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Open email client
-    window.location.href = mailtoLink;
+    try {
+      // Send to API route
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // Success
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setSubmitStatus("error");
+      
+      // Reset error message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -255,13 +277,39 @@ export default function ContactPageContent() {
           </div>
 
           {/* Submit Button */}
-          <Button type="submit" variant="primary" icon={SendIcon} className="w-full">
-            Send Message
+          <Button 
+            type="submit" 
+            variant="primary" 
+            icon={SendIcon} 
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
 
-          <p className="text-xs text-muted/70 font-light text-center">
-            This will open your email client with a pre-filled message.
-          </p>
+          {/* Status Messages */}
+          {submitStatus === "success" && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="p-4 bg-green-50 border border-green-200 text-green-800 text-sm font-light rounded"
+            >
+              Message sent successfully! I&apos;ll get back to you soon.
+            </motion.div>
+          )}
+
+          {submitStatus === "error" && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="p-4 bg-red-50 border border-red-200 text-red-800 text-sm font-light rounded"
+            >
+              Failed to send message. Please try again or email me directly at{" "}
+              <a href={`mailto:${email}`} className="underline">
+                {email}
+              </a>
+            </motion.div>
+          )}
         </form>
       </motion.div>
     </Container>

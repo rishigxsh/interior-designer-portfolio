@@ -110,7 +110,22 @@ Update in these files:
 3. Place in: `/public/resume.pdf`
 4. The download button on `/about` will automatically enable!
 
-### 5. Update SEO & Social Cards
+### 5. Set Up Contact Form Email
+
+The contact form sends emails directly from the website using Resend.
+
+**Quick Setup:**
+1. Sign up at [resend.com](https://resend.com) (free tier: 3,000 emails/month)
+2. Create an API key
+3. Add to `.env.local`:
+   ```
+   RESEND_API_KEY=re_your_api_key_here
+   ```
+4. Add the same to Vercel environment variables
+
+**Detailed Guide:** See [EMAIL_SETUP.md](./EMAIL_SETUP.md) for complete instructions.
+
+### 6. Update SEO & Social Cards
 
 **File:** `app/layout.tsx` (lines 25-55)
 
