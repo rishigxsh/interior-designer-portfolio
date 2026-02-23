@@ -78,7 +78,6 @@ export default function ContactPageContent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted! Starting validation...");
 
     // Validate
     const newErrors = {
@@ -87,22 +86,18 @@ export default function ContactPageContent() {
       message: !formData.message.trim(),
     };
 
-    console.log("Validation errors:", newErrors);
     setErrors(newErrors);
 
     // If any errors, don't submit
     if (Object.values(newErrors).some((error) => error)) {
-      console.log("Form has errors, not submitting");
       return;
     }
 
-    console.log("Validation passed, submitting...");
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
       // Send to API route
-      console.log("Sending form data:", formData);
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -111,16 +106,11 @@ export default function ContactPageContent() {
         body: JSON.stringify(formData),
       });
 
-      console.log("Response status:", response.status);
-      const responseData = await response.json();
-      console.log("Response data:", responseData);
-
       if (!response.ok) {
         throw new Error("Failed to send message");
       }
 
       // Success
-      console.log("Setting success status");
       setSubmitStatus("success");
       setFormData({ name: "", email: "", message: "" });
 

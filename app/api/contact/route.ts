@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // Temporary - will update with your domain
-      to: 'rishigesh.ibdp@gmail.com',
+      to: 'mruduladhondalay@gmail.com',
       replyTo: email,
       subject: `Portfolio Inquiry from ${name}`,
       html: `
