@@ -22,7 +22,7 @@ export default function TestimonialsPageContent() {
         </p>
       </motion.div>
 
-      {/* Featured Video Testimonial - video_2 */}
+      {/* Featured Video Testimonial - video */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -50,14 +50,14 @@ export default function TestimonialsPageContent() {
               preload="metadata"
               poster="/portfolio/portfolio-01.png"
             >
-              <source src="/testimonials/video_2.mp4" type="video/mp4" />
+              <source src="/testimonials/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
         </div>
       </motion.div>
 
-      {/* Second Video Testimonial - video */}
+      {/* Second Video Testimonial - video_2 */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -82,7 +82,7 @@ export default function TestimonialsPageContent() {
               preload="metadata"
               poster="/portfolio/portfolio-01.png"
             >
-              <source src="/testimonials/video.mp4" type="video/mp4" />
+              <source src="/testimonials/video_2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
