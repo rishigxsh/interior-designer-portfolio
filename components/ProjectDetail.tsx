@@ -157,9 +157,54 @@ export default function ProjectDetail({ project, prevProject, nextProject }: Pro
               <div className="text-xs uppercase tracking-wider text-muted/70 mb-2 font-medium">
                 Tools
               </div>
-              <div className="font-medium text-sm">AutoCAD • SketchUp • 3ds Max</div>
+              <div className="font-medium text-sm">{project.projectDetails?.tools || "AutoCAD • SketchUp • 3ds Max"}</div>
             </div>
           </div>
+
+          {/* Project Details */}
+          {project.projectDetails && (
+            <div className="mt-16 space-y-12">
+              {/* Project Overview */}
+              <div>
+                <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-tight mb-4">
+                  Project Overview
+                </h2>
+                <p className="text-base md:text-lg text-muted font-light leading-relaxed">
+                  {project.projectDetails.overview}
+                </p>
+              </div>
+
+              {/* Design Intent */}
+              <div>
+                <h3 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-4">
+                  Design Intent
+                </h3>
+                <p className="text-base md:text-lg text-muted font-light leading-relaxed">
+                  {project.projectDetails.intent}
+                </p>
+              </div>
+
+              {/* Design Approach */}
+              <div>
+                <h3 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-4">
+                  Design Approach
+                </h3>
+                <p className="text-base md:text-lg text-muted font-light leading-relaxed">
+                  {project.projectDetails.approach}
+                </p>
+              </div>
+
+              {/* Execution & Coordination */}
+              <div>
+                <h3 className="font-serif text-xl md:text-2xl font-medium tracking-tight mb-4">
+                  Execution & Coordination
+                </h3>
+                <p className="text-base md:text-lg text-muted font-light leading-relaxed">
+                  {project.projectDetails.execution}
+                </p>
+              </div>
+            </div>
+          )}
         </motion.div>
       </Container>
 
