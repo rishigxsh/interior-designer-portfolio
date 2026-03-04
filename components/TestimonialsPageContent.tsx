@@ -57,38 +57,6 @@ export default function TestimonialsPageContent() {
         </div>
       </motion.div>
 
-      {/* Second Video Testimonial - video_2 */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mb-20 lg:mb-24"
-      >
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <h2 className="font-serif text-2xl md:text-3xl font-medium tracking-tight mb-2">
-              Another Client Story
-            </h2>
-            <p className="text-sm text-muted font-light">
-              More feedback from our satisfied clients
-            </p>
-          </div>
-
-          {/* Video Player */}
-          <div className="relative aspect-video bg-foreground/5 border border-border/60 overflow-hidden">
-            <video
-              controls
-              className="w-full h-full"
-              preload="metadata"
-              poster="/portfolio/portfolio-01.png"
-            >
-              <source src="/testimonials/video_2.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </motion.div>
-
       {/* Project Showcase Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
